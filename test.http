@@ -1,0 +1,45 @@
+##CONECÇÃO LOCAL##
+
+###
+GET http://localhost:3333/user/fetch
+
+
+###
+POST http://localhost:3333/user/create
+content-type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin"
+}
+
+###
+POST http://localhost:3333/user/auth
+content-type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin"
+}
+
+##CONECÇÃO MONGO##
+###
+GET https://backend-versiculos.vercel.app/user/fetch
+
+###
+POST https://backend-versiculos.vercel.app/user/auth
+content-type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin"
+}
+
+###
+POST https://backend-versiculos.vercel.app/user/create
+content-type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "admin"
+}
