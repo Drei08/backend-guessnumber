@@ -1,4 +1,4 @@
-import { fetchService, createService, authService  } from "./service.js";
+import { fetchService, createService, authService, authSignService  } from "./service.js";
 import { connectToMongo } from "../database/index.js";
 
 const userFetchController = async (request, response) => {
@@ -25,4 +25,13 @@ const userAuthController = async (request, response) => {
     return response.status(200).send(serviceResponse);
 }
 
-export { userFetchController, userCreateController, userAuthController}
+const userAuthSignController = async (request, response) => {
+   const serviceResponse = await authSignService (request.body);
+
+    if(serviceResponse?.error){
+      return response.status(serviceResponse.statusCode).send({ error: true, menssage: serviceResponse.message });
+    }
+    return response.status(200).send(serviceResponse);
+}
+
+export { userFetchController, userCreateController, userAuthController, userAuthSignController}

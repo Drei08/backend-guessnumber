@@ -22,6 +22,16 @@ content-type: application/json
   "password": "admin"
 }
 
+###
+POST http://localhost:3333/user/authsign
+content-type: application/json
+
+{
+  "username": "andrei",
+  "password": "0804",
+  "picture": "123"
+}
+
 ##CONECÇÃO MONGO##
 ###
 GET https://backend-versiculos.vercel.app/user/fetch
